@@ -1,0 +1,19 @@
+/* Pasek menu dla ekranów większych niż md */
+@media (min-width: 768px) {
+  .hide-on-dropdown {
+    display: block;
+  }
+  .show-on-dropdown {
+    display: none;
+  }
+}
+
+/* Pasek menu dla ekranów mniejszych niż md */
+@media (max-width: 767px) {
+  .hide-on-dropdown {
+    display: none;
+  }
+  .show-on-dropdown {
+    display: block;
+  }
+}
