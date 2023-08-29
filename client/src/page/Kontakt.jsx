@@ -1,4 +1,4 @@
-// src/components/Kontakt.jsx
+
 import React, { Component } from 'react';
 import axios from 'axios';
 
@@ -37,10 +37,10 @@ class Kontakt extends Component {
       url: 'http://localhost:3000/send',
       data: {
         name: this.state.name,
-        email: this.state.email, // Przekaz email klienta
+        email: this.state.email, 
         subject: this.state.subject,
         message: this.state.message,
-        recipientEmail: 'maurycy.piasek@wp.pl', // Przekaz email odbiorcy
+        recipientEmail: 'maurycy.piasek@wp.pl', 
       },
     }).then(response => {
       if (response.data.status === 'success') {

@@ -1,4 +1,4 @@
-// App.js
+
 
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -7,7 +7,7 @@ import Navbar from './component/Navbar';
 import Oferta from './page/Oferta';
 import StronaGlowna from './page/StronaGlowna';
 import Onas from './page/Onas';
-import ProductDetail from './page/ProductDetail'; // Upewnij się, że ścieżka jest poprawna
+import ProductDetail from './page/ProductDetail';
 
 const App = () => {
   return (

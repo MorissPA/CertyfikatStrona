@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './navbar.css'; // Import pliku CSS
+import './navbar.css'; 
 const Navbar = () => {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 

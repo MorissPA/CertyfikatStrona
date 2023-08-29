@@ -1,28 +1,39 @@
+//server.js
+require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
+const mongoose = require('mongoose');
 const cors = require('cors');
-require('dotenv').config();
+const jwt = require('jsonwebtoken');
+const productRoutes = require('./routes/products');
+const authRoutes = require('./routes/auth'); // Dodaj to
 
 const app = express();
-app.use(cors()); // Enable CORS
-app.use(express.json()); // Parse request body as JSON
 
+// Konfiguracja CORS
+app.use(cors({
+  origin: ['http://localhost:5173', 'http://localhost:4000'],
+  credentials: true,
+}));
+
+// Middleware
+app.use(express.json());
+
+// Email setup
 const transporter = nodemailer.createTransport({
   host: "smtp.wp.pl",
   port: 465,
-  secure: true, // use TLS
+  secure: true,
   auth: {
     user: process.env.EMAIL,
     pass: process.env.PASSWORD,
   },
   tls: {
-    // do not fail on invalid certs
     rejectUnauthorized: false,
   },
 });
 
-// Verify connection configuration
-transporter.verify(function (error, success) {
+transporter.verify((error, success) => {
   if (error) {
     console.log(error);
   } else {
@@ -58,7 +69,27 @@ app.post('/send', async (req, res) => {
     });
   }
 });
+// MongoDB setup
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
+const db = mongoose.connection;
+db.on('error', (error) => console.error('MongoDB Error:', error));
+db.once('open', () => console.log('Connected to MongoDB'));
+
+// Dodanie tras
+app.use('/api/products', productRoutes);
+app.use('/api/auth', authRoutes); // Dodaj to
+
+// Middleware do obsługi błędów
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
+// Start serwera
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
