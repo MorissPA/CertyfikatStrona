@@ -1,4 +1,4 @@
-//server.js
+
 require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const productRoutes = require('./routes/products');
-const authRoutes = require('./routes/auth'); // Dodaj to
+const authRoutes = require('./routes/auth');
 
 const app = express();
 
@@ -44,15 +44,15 @@ transporter.verify((error, success) => {
 app.post('/send', async (req, res) => {
   try {
     var name = req.body.name;
-    var clientEmail = req.body.email; // Get the client's email from the request
+    var clientEmail = req.body.email; 
     var subject = req.body.subject;
     var message = req.body.message;
 
     var mail = {
-      from: `"${name}" <${process.env.EMAIL}>`, // Set the "From" address as the client's name and your email
-      to: process.env.EMAIL, // Replace with your email address
-      subject: `${name} - ${subject}`, // Add client's name to the subject
-      text: `Client's Email: ${clientEmail}\n\n${message}`, // Include client's email in the message
+      from: `"${name}" <${process.env.EMAIL}>`, 
+      to: process.env.EMAIL, 
+      subject: `${name} - ${subject}`,
+      text: `Client's Email: ${clientEmail}\n\n${message}`,
     };
 
     // Send the email
@@ -79,18 +79,18 @@ const db = mongoose.connection;
 db.on('error', (error) => console.error('MongoDB Error:', error));
 db.once('open', () => console.log('Connected to MongoDB'));
 
-// Dodanie tras
-app.use('/api/products', productRoutes);
-app.use('/api/auth', authRoutes); // Dodaj to
 
-// Middleware do obsługi błędów
+app.use('/api/products', productRoutes);
+app.use('/api/auth', authRoutes);
+
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Something broke!');
 });
 
 
-// Start serwera
+// Server start
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

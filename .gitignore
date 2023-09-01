@@ -1,6 +1,5 @@
-# Inne pliki do ignorowania
+
 *.log
 *.tmp
 
-# Ignoruj plik .env
 .env

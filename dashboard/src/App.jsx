@@ -8,7 +8,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        {/* Inne trasy mogą być dodane poniżej */}
         <Route path="/admin-panel" element={<AdminPanel />} />
       </Routes>
     </BrowserRouter>
