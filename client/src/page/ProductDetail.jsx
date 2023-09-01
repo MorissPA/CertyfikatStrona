@@ -1,29 +1,50 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { products } from '../data/products';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import axios from 'axios';
 import DOMPurify from 'dompurify';
 
 const ProductDetail = () => {
-  const { id: productId } = useParams();
-  console.log("Szukane ID:", productId);
+  const { id } = useParams();
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const productInfo = products.find(product => product.id === productId);
-  
-  if (!productInfo) return <div>Produkt nie został znaleziony</div>;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:3000/api/products/${id}`);
+        setProduct(response.data);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
+  }, [id]);
 
-  const cleanDescription = DOMPurify.sanitize(productInfo.description);
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>An error occurred: {error.message}</p>;
+  if (!product) return <p>Product not found</p>;
+
+  const cleanDescription = DOMPurify.sanitize(product.description);
+  const cleanAdditionalInfo = DOMPurify.sanitize(product.additionalInfo); // Dodane
 
   return (
     <div className="p-5 max-w-2xl mx-auto">
-      <h2 className="text-2xl border-b pb-3 mb-5">{productInfo.name}</h2>
-      <img src={productInfo.imageUrl} alt={productInfo.name} className="w-full mb-5"/>
-      <div 
-        className="mb-3" 
+      <h2 className="text-2xl border-b pb-3 mb-5">{product.name}</h2>
+      <img src={product.imageUrl} alt={product.name} className="w-full mb-5" />
+      <div
+        className="mb-3"
         dangerouslySetInnerHTML={{ __html: cleanDescription }}
       ></div>
-      <p className="mb-5">{productInfo.additionalInfo}</p>
-      <Link to="/contact" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">Skontaktuj się z nami po więcej informacji</Link>
+      <div
+        className="mb-3"
+        dangerouslySetInnerHTML={{ __html: cleanAdditionalInfo }}  // Dodane
+      ></div>
+      <Link to="/contact" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600">
+        Skontaktuj się z nami po więcej informacji
+      </Link>
     </div>
   );
 };

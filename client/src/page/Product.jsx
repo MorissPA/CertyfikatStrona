@@ -11,7 +11,8 @@ const Product = ({ product }) => {
       <h3 className="text-xl mb-3">{product.name}</h3>
       <div className="mb-4" dangerouslySetInnerHTML={{ __html: cleanDescription }}></div>
 
-      <Link to={`/offer/${product.id}`} className="text-white bg-blue-500 py-2 px-4 rounded hover:bg-blue-600">Zobacz szczegóły</Link>
+      <Link to={`/offer/${product._id}`}>View Details</Link>
+
 
     </div>
   );
