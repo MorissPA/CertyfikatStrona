@@ -89,6 +89,7 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
+
 // Start serwera
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

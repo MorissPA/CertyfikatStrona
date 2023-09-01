@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Login from './Login';
-import AdminRegister from './AdminRegister';  // Upewnij się, że importujesz AdminRegister
+import AdminPanel from './AdminPanel';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-
-
   return (
-    <div>
-      <Login />
-      <AdminRegister />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        {/* Inne trasy mogą być dodane poniżej */}
+        <Route path="/admin-panel" element={<AdminPanel />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
