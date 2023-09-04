@@ -45,23 +45,39 @@ const Login = () => {
   }, [error]);
 
   return (
-    <form onSubmit={handleSubmit}>
+<div className="flex items-center justify-center min-h-screen bg-gray-200">
+  <form className="bg-white p-5 rounded-lg shadow-md w-full max-w-lg flex flex-col items-center" onSubmit={handleSubmit}>
+    <div className="mb-4 w-full">
       <input
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         type="text"
         placeholder="Nazwa użytkownika"
         value={formData.username}
         onChange={(e) => setFormData({ ...formData, username: e.target.value })}
       />
+    </div>
+    <div className="mb-4 w-full">
       <input
+        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         type="password"
         placeholder="Hasło"
         value={formData.password}
         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
       />
-      {loading && <p>Logowanie...</p>}
-      {error && <p className="error">{error}</p>}
-      <button type="submit" disabled={loading}>Zaloguj się</button>
-    </form>
+    </div>
+    {loading && <p className="text-blue-500">Logowanie...</p>}
+    {error && <p className="text-red-500 mb-4">{error}</p>}
+    <button
+      className={`bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+      type="submit"
+      disabled={loading}
+    >
+      Zaloguj się
+    </button>
+  </form>
+</div>
+
+
   );
 };
 
