@@ -6,7 +6,7 @@ const Login = () => {
   const [formData, setFormData] = useState({ username: '', password: '' });
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate();  // Użycie useNavigate
+  const navigate = useNavigate();
 
   const validateForm = () => {
     return formData.username.length > 0 && formData.password.length > 0;
@@ -26,11 +26,11 @@ const Login = () => {
       const res = await axios.post('http://localhost:3000/api/auth/login', formData);
       localStorage.setItem('token', res.data.token);
       setLoading(false);
-      navigate('/admin-panel');  // przekierowanie do panelu admina
+      navigate('/admin-panel');
     } catch (err) {
       setLoading(false);
       if (err.response && err.response.data) {
-        setError(err.response.data.message); // Ustaw błąd na podstawie odpowiedzi serwera
+        setError(err.response.data.message);
       } else {
         setError('Błąd logowania, spróbuj ponownie.');
       }
@@ -38,7 +38,7 @@ const Login = () => {
   };
 
   useEffect(() => {
-    // resetuj pole hasła po błędzie
+   
     if (error) {
       setFormData({ ...formData, password: '' });
     }

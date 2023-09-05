@@ -5,7 +5,7 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const productRoutes = require('./routes/products');
 const authRoutes = require('./routes/auth');
-const emailController = require('./emailController'); // Importujemy kontroler e-mail
+const emailController = require('./emailController'); 
 
 const app = express();
 
@@ -33,7 +33,7 @@ app.use('/api/products', productRoutes);
 app.use('/api/auth', authRoutes);
 
 // Email Route
-app.post('/send', emailController.sendEmail);  // Używamy funkcji z kontrolera e-mail
+app.post('/send', emailController.sendEmail);
 
 // Error Handling
 app.use((err, req, res, next) => {
