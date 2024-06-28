@@ -11,7 +11,7 @@ const Product = ({ product }) => {
       <h3 className="text-xl mb-3">{product.name}</h3>
       <div className="mb-4" dangerouslySetInnerHTML={{ __html: cleanDescription }}></div>
 
-      <Link to={`/offer/${product._id}`}>View Details</Link>
+      <Link to={`/offer/${product._id}`}>Zobacz szczegóły</Link>
 
 
     </div>

@@ -33,7 +33,7 @@ const ProductDetail = () => {
   return (
     <div className="p-5 max-w-2xl mx-auto">
       <h2 className="text-2xl border-b pb-3 mb-5">{product.name}</h2>
-      <img src={product.imageUrl} alt={product.name} className="w-full mb-5" />
+     
       <div
         className="mb-3"
         dangerouslySetInnerHTML={{ __html: cleanDescription }}

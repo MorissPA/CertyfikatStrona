@@ -1,0 +1,23 @@
+/* src/style/Onas.css */
+
+/* Customize slider navigation buttons */
+.slick-prev, .slick-next {
+    width: 50px !important;
+    height: 50px !important;
+    z-index: 1;
+  }
+  
+  .slick-prev::before, .slick-next::before {
+    font-size: 40px !important;
+    color: #ff0000 !important; /* Change the color as needed */
+  }
+  
+  .slick-prev {
+    left: -60px !important; /* Adjust as needed */
+  }
+  
+  .slick-next {
+    right: -60px !important; /* Adjust as needed */
+  }
+ 
+  

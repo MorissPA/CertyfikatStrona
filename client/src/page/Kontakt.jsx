@@ -59,12 +59,12 @@ class Kontakt extends Component {
 
   render() {
     return (
-<div className="section">
-  <div className="container">
-    <div className="max-w-md mx-auto">
-      <div className="bg-white rounded-lg p-8">
-        <h2 className="text-xl font-semibold mb-4">Skontaktuj się z nami</h2>
-        <p className="text-gray-600 mb-8">
+      <div className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed bg-[url('./image/komp5.webp')]">
+      <div className="bg-black bg-opacity-60 min-h-screen flex justify-center items-center">
+        <div className="max-w-md mx-auto min-h-screen">
+          <div className="bg-indigo-900 rounded-lg p-8 m-4">
+        <h2 className="text-xl font-semibold mb-4 text-white">Skontaktuj się z nami</h2>
+        <p className="text-white mb-8">
           Daj nam znać, co myślisz! Aby zapewnić lepszą obsługę, proszę nie wahaj się podzielić swoją opinią. Dziękujemy.
         </p>
         <form
@@ -72,45 +72,45 @@ class Kontakt extends Component {
           onSubmit={this.submitEmail.bind(this)}
           method="POST"
         >
-          <div className="mb-4">
+          <div className="mb-4 bg-gray-300">
             <input
               placeholder="Imię"
               id="name"
               type="text"
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md bg-gray-300 text-black"
               required
               value={this.state.name}
               onChange={this.onNameChange.bind(this)}
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 bg-gray-300">
             <input
               placeholder="Email"
               id="email"
               type="email"
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md bg-gray-300 text-black"
               aria-describedby="emailHelp"
               required
               value={this.state.email}
               onChange={this.onEmailChange.bind(this)}
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 bg-gray-300">
             <input
               placeholder="Temat"
               id="subject"
               type="text"
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md bg-gray-300 text-black"
               required
               value={this.state.subject}
               onChange={this.onSubjectChange.bind(this)}
             />
           </div>
-          <div className="mb-4">
+          <div className="mb-4 bg-gray-300">
             <textarea
               placeholder="Wiadomość"
               id="message"
-              className="w-full p-2 border rounded-md"
+              className="w-full p-2 border rounded-md bg-gray-300 "
               rows="3"
               required
               value={this.state.message}

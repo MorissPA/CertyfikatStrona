@@ -1,0 +1,35 @@
+/* Resetowanie domyślnych styli dla ul i li */
+ul, ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Podstawowe style dla ul i li */
+  ul {
+    margin-bottom: 1em;
+  }
+  
+  li {
+    margin-bottom: 0.5em;
+  }
+  
+  /* Podstawowe style dla h1 z pogrubieniem */
+  h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+  }
+  
+  /* Podstawowe style dla p z pogrubieniem */
+  p {
+    margin-bottom: 1em;
+    font-weight: bold;
+  }
+  
+  /* Podstawowe style dla u (podkreślenie) z pogrubieniem */
+  u {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  

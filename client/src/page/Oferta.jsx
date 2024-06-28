@@ -7,21 +7,25 @@ const OfferPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios('http://localhost:3000/api/products'); 
+      const result = await axios('http://localhost:3000/api/products');
       setProducts(result.data);
     };
-  
+
     fetchData();
   }, []);
-  
 
   return (
-    <div className="p-5">
-      <h2 className="text-2xl mb-6">Nasza oferta</h2>
-      <div className="grid grid-cols-3 gap-4">
-        {products.map((product) => (
-          <Product key={product._id} product={product} /> 
-        ))}
+    <div className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed bg-[url('./image/komp1.jpg')]">
+      <div className="bg-black bg-opacity-40 min-h-screen flex justify-center">
+        <div className="container mx-auto px-4 py-12">
+          <div className="bg-gray-200 p-6 rounded-lg shadow-lg">
+            <div className="grid grid-cols-3 gap-4">
+              {products.map((product) => (
+                <Product key={product._id} product={product} />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
