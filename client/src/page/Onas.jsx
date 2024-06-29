@@ -10,17 +10,17 @@ const Onas = () => {
   const tabs = [
     {
       title: "K. WITKA",
-      content: "Koordynator zajęć K. Witka wyróżnia się niezwykłą energią i entuzjazmem. Nie tylko perfekcyjnie zarządza, ale również inspiruje innych do osiągania ambitnych celów.",
+      content: "K. Witka cechuje się energią i przebojowością. Jesteśmy ogromnie zadowoleni, że pracuje w naszym zespole jako Koordynator zajęć. K. Witka niezmiennie pokazuje w wykonywanej przez siebie pracy zaangażowanie i motywuje wszystkich do działania.",
       imgSrc: "./image/postac.jpg"
     },
     {
       title: "A. MARCZAK",
-      content: "Nauczyciel A. Marczak przynosi do naszej firmy nie tylko pasję, ale także pełne zaangażowanie. Jako Nauczyciel doskonale wpisuje się w rozwijanie potencjału naszej placówki, przyczyniając się do jej codziennego wzrostu i osiągania sukcesów.",
+      content: "Od czasu, gdy z nami współpracuje, A. Marczak wnosi ze sobą pasję i zaangażowanie, aby CERTYFIKAT Firma Wielobranżowa Ewa Stefaniak-Piasek codziennie się rozwijała. Jako Nauczyciel sprawdza się doskonale!",
       imgSrc: "../image/postac.jpg"
     },
     {
       title: "C. MROCZEK",
-      content: "Doradca zawodowy C. Mroczek cieszy się uznaniem zarówno wśród studentów, jak i współpracowników. Jego obecność nadaje firmie CERTYFIKAT charakter miejsca obfitującego w wiedzę, radość i entuzjazm.",
+      content: "C. Mroczek to ktoś, kogo uwielbiają zarówno studenci, jak i współpracownicy. Sprawia, że CERTYFIKAT Firma Wielobranżowa Ewa Stefaniak-Piasek jest miejscem pełnym wiedzy, radości i entuzjazmu. Jako Doradca zawodowy stanowi bardzo ważną część naszego zespołu.",
       imgSrc: "./image/postac.jpg"
     }
   ];
@@ -35,10 +35,10 @@ const Onas = () => {
   };
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-screen h-screen bg-cover bg-center bg-no-repeat p-4" style={{ backgroundImage: 'url(./image/komp5.webp)' }}>
-      <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
+    <div className="relative flex flex-col items-center justify-center w-screen h-screen bg-cover bg-center bg-no-repeat p-4 bg-gray-100" >
+     
 
-      <div className="relative w-full max-w-6xl h-auto bg-gray-200 rounded-lg shadow-lg overflow-hidden p-14 z-10">
+      <div className="relative w-full max-w-6xl h-auto bg-white rounded-lg shadow-lg overflow-hidden p-14 z-10">
         <Slider {...sliderSettings}>
           {tabs.map((tab, index) => (
             <div key={index} className="flex flex-col md:flex-row items-center md:items-start p-4">
@@ -55,21 +55,8 @@ const Onas = () => {
           ))}
         </Slider>
       </div>
-
-      <div className="relative w-full max-w-6xl h-50vh bg-gray-200 rounded-lg shadow-lg overflow-hidden p-14  flex-1 z-10">
-        <h2 className="text-2xl font-bold text-indigo-500">O Firmie</h2>
-        <p className="mb-4">
-          Od 1999 roku organizujemy kursy szybkiego pisania. Mamy doświadczenie w przygotowaniu dzieci, młodzieży, dorosłych do bezwzrokowego pisania na klawiaturze komputera.
-        </p>
-        <p className="mb-4">
-          Jesteśmy zarejestrowaną instytucją szkoleniową wpisaną do Rejestru Instytucji Szkoleniowych Wojewódzkiego Urzędu Pracy w Łodzi. Specjalizujemy się w kursach z obsługi komputera, programów komputerowych oraz nauki bezwzrokowego pisania na klawiaturze, 
-          oferując profesjonalne szkolenia dla osób zarejestrowanych jako bezrobotne w Powiatowym Urzędzie Pracy. Dzięki współpracy z firmami realizującymi projekty unijne, jesteśmy solidnym podwykonawcą.
-        </p>
-        <p className="mb-4">
-          Nasze praktyczne zajęcia są prowadzone rzetelnie, innowacyjnie i dostosowane do indywidualnych potrzeb oraz posiadanych umiejętności uczestników. Prowadzą je doświadczeni, cierpliwi i życzliwi nauczyciele.
-          Jeśli poszukujesz miejsca, gdzie zdobędziesz konkretne umiejętności, skontaktuj się z nami, aby dowiedzieć się więcej i dołączyć do rozwijającej się społeczności firmy CERTYFIKAT.
-        </p>
-      </div>
+      <div className="my-8"></div>
+      
     </div>
   );
 };

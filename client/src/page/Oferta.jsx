@@ -15,10 +15,9 @@ const OfferPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cover bg-center bg-no-repeat bg-fixed bg-[url('./image/komp1.jpg')]">
-      <div className="bg-black bg-opacity-40 min-h-screen flex justify-center">
+    <div className="min-h-screen bg-gray-100 bg-cover bg-center bg-no-repeat bg-fixed bg-[url('./image/komp1.jpg')]">
         <div className="container mx-auto px-4 py-12">
-          <div className="bg-gray-200 p-6 rounded-lg shadow-lg">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
             <div className="grid grid-cols-3 gap-4">
               {products.map((product) => (
                 <Product key={product._id} product={product} />
@@ -27,7 +26,6 @@ const OfferPage = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
