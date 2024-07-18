@@ -9,18 +9,35 @@ const Onas = () => {
 
   const tabs = [
     {
-      title: "K. WITKA",
-      content: "K. Witka cechuje się energią i przebojowością. Jesteśmy ogromnie zadowoleni, że pracuje w naszym zespole jako Koordynator zajęć. K. Witka niezmiennie pokazuje w wykonywanej przez siebie pracy zaangażowanie i motywuje wszystkich do działania.",
+      title: "EWA STEFANIAK-PIASEK",
+      content: "Ewa Stefaniak-Piasek jest autorką podręczników dla branży ekonomicznej w zakresie obsługi biura, egzaminatorem państwowym w zakresie ekonomiczno-handlowym, recenzentem arkuszy egzaminacyjnych, współautorem programów dydaktycznych, także modułowych. Uczy praktycznej obsługi biura w zakresie programów komputerowych. Pierwsza w Polsce napisała podręcznik do nauki metodycznej obsługi klawiatury komputera oraz podręczniki i poradniki dotyczące nowoczesnej korespondencji i organizacji pracy biurowej.                        ",
       imgSrc: "./image/postac.jpg"
     },
     {
-      title: "A. MARCZAK",
-      content: "Od czasu, gdy z nami współpracuje, A. Marczak wnosi ze sobą pasję i zaangażowanie, aby CERTYFIKAT Firma Wielobranżowa Ewa Stefaniak-Piasek codziennie się rozwijała. Jako Nauczyciel sprawdza się doskonale!",
+      title: "CYRYL ROSIAK",
+      content: "XXXXXXXXXXXXXXXXXXXXXXX",
       imgSrc: "../image/postac.jpg"
     },
     {
-      title: "C. MROCZEK",
-      content: "C. Mroczek to ktoś, kogo uwielbiają zarówno studenci, jak i współpracownicy. Sprawia, że CERTYFIKAT Firma Wielobranżowa Ewa Stefaniak-Piasek jest miejscem pełnym wiedzy, radości i entuzjazmu. Jako Doradca zawodowy stanowi bardzo ważną część naszego zespołu.",
+      title: "MAURYCY PIASEK",
+      content: "Technik i Administrator IT",
+      imgSrc: "./image/postac.jpg"
+    },
+    {
+      title: "ZOHRA BOUAOUDA",
+      content: "xxxxxxxxxxxxxx",
+      imgSrc: "./image/postac.jpg"
+    }
+    ,
+    {
+      title: "KATARZYNA PIASEK",
+      content: "XXXXXXXXXX",
+      imgSrc: "./image/postac.jpg"
+    }
+    ,
+    {
+      title: "MAURYCY PIASEK",
+      content: "Technik i Administrator IT",
       imgSrc: "./image/postac.jpg"
     }
   ];
@@ -47,8 +64,8 @@ const Onas = () => {
                   <img src={tab.imgSrc} alt={tab.title} className="w-auto h-auto rounded-lg" />
                 </div>
                 <div className="md:pl-4 mt-4 md:mt-0">
-                  <h3 className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">{tab.title}</h3>
-                  <div className="text-gray-500 py-8">{tab.content}</div>
+                  <h3 className="uppercase tracking-wide text-blue-900 font-bold text-xl">{tab.title}</h3>
+                  <div className="text-blue-900 py-8 text-bold">{tab.content}</div>
                 </div>
               </div>
             </div>

@@ -3,8 +3,8 @@ import React from 'react';
 const Cennik = () => {
   return (
     <div className="flex flex-col items-center p-8 bg-gray-100">
-      <h1 className="text-4xl font-bold mb-8">Cennik</h1>
-      <h1 className="text-2xl font-bold mb-8">Ceny za lekcje</h1>
+      <h1 className="text-6xl font-bold mb-8 text-blue-900">Cennik</h1>
+      <h1 className="text-2xl font-bold mb-8">Ceny za kursy</h1>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <h2 className="text-2xl font-bold mb-4">Zajęcia idywidualne</h2>
@@ -34,7 +34,7 @@ const Cennik = () => {
           </ul>
         </div>
         <div className="bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-2xl font-bold mb-4">Kursy Cyryl</h2>
+          <h2 className="text-2xl font-bold mb-4">Kursy Językowe</h2>
           <p className="text-3xl font-bold mb-4">80 ZŁ</p>
           <ul className="list-disc list-inside mb-4">
             <li>1 lekcja – 80 zł</li>
@@ -48,24 +48,30 @@ const Cennik = () => {
       
       {/* Sekcja FAQ */}
       <div className="w-full max-w-4xl mt-8">
-        <h2 className="text-3xl font-bold mb-6">FAQ</h2>
+        <h2 className="text-3xl font-bold mb-6">Najczęściej zadawane pytania</h2>
         <div className="border-b-2 border-gray-300 pb-4 mb-4">
           <div className="flex justify-between items-center mb-2">
-            <h3 className="text-xl text-blue-600 font-bold">What's the most frequently asked question?</h3>
-            <button className="text-xl font-bold">+</button>
+            <h3 className="text-2xl text-blue-900 font-bold">W jakiej formie prowadzone są zajęcia</h3>
+            
           </div>
-          <p>Answer the frequently asked question in a simple sentence, a longish paragraph, or even in a list.</p>
+          <div className="border-b-2 border-gray-300 pb-4 mb-4"></div>
+          <ol className='list-disc font-semibold'>
+          <li className='text-xl border-b-2 border-gray-300 pb-4 mb-4'>Prowadzimy zajęcia indywidualne i grupowe w grupach do 5 osób. Ta forma zajęć jest najbardziej efektywna i w 100 % przynosi zamierzone efekty. </li>
+            <li className='text-xl '>Stacjonarnie i Zdalnie</li>
+            
+            
+          </ol>
         </div>
         <div className="border-b-2 border-gray-300 pb-4 mb-4">
           <div className="flex justify-between items-center mb-2">
-            <h3 className="text-xl text-blue-600 font-bold">How about a second one?</h3>
-            <button className="text-xl font-bold">+</button>
+            <h3 className="text-2xl text-blue-900 font-bold">How about a second one?</h3>
+            
           </div>
         </div>
         <div className="border-b-2 border-gray-300 pb-4 mb-4">
           <div className="flex justify-between items-center mb-2">
-            <h3 className="text-xl text-blue-600 font-bold">And a third?</h3>
-            <button className="text-xl font-bold">+</button>
+            <h3 className="text-2xl text-blue-900 font-bold">And a third?</h3>
+            
           </div>
         </div>
       </div>

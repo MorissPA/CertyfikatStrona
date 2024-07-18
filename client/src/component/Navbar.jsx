@@ -7,7 +7,7 @@ const Navbar = () => {
 
   const navLinks = [
     { path: "/", label: "Strona Główna" },
-    { path: "/about", label: "O nas" },
+    { path: "/about", label: "Nasz Zespół" },
     { path: "/offer", label: "Oferta" },
     { path: "/price", label: "Cennik" },
     { path: "/contact", label: "Kontakt" },
@@ -32,7 +32,7 @@ const Navbar = () => {
                 key={link.path}
                 to={link.path}
                 className={`block mt-4 md:inline-block md:mt-0 px-3 py-2 border rounded-lg text-gray-700 hover:text-white hover:bg-gray-300 mr-4 transition duration-300 ease-in-out ${
-                  location.pathname === link.path ? 'bg-blue-700 text-white' : 'text-gray-700'
+                  location.pathname === link.path ? 'bg-blue-900 text-white' : 'text-gray-700'
                 }`}
               >
                 {link.label}
